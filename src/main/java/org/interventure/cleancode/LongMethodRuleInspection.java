@@ -4,7 +4,6 @@ import com.intellij.psi.PsiMethod;
 import com.siyeh.InspectionGadgetsBundle;
 import com.siyeh.ig.BaseInspectionVisitor;
 import com.siyeh.ig.methodmetrics.MethodMetricInspection;
-import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
 
 public class LongMethodRuleInspection
@@ -32,13 +31,6 @@ public class LongMethodRuleInspection
   @Override
   protected String getConfigurationLabel() {
     return "Long Method";
-  }
-
-  @Nls
-  @NotNull
-  @Override
-  public String getGroupDisplayName() {
-    return Constants.INSPECTION_GROUP;
   }
 
   @Override

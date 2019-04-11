@@ -13,6 +13,9 @@
   <extensions defaultExtensionNs="com.intellij">
     <localInspection implementationClass="org.interventure.cleancode.ReferenceDeclarationDistanceInspection"/>
     <localInspection implementationClass="org.interventure.cleancode.InstanceFieldCountInspection"/>
+    <localInspection implementationClass="org.interventure.cleancode.FlagArgumentsRule"/>
+    <localInspection implementationClass="org.interventure.cleancode.AvoidEncodingRule"/>
+    <localInspection implementationClass="org.interventure.cleancode.IntentionRevealingNameRule"/>
 <!--
     <localInspection implementationClass="org.interventure.cleancode.LongMethodRuleInspection"/>
 -->
@@ -24,6 +27,10 @@
     </group>
     <action id="StepDownRule" class="org.interventure.cleancode.action.RearrangeMethodsAction" text="Step Down Rule"
       description="Rearrange Methods according to Stepdown Rule">
+      <add-to-group group-id="CleanCodePlugin.Main" anchor="last"/>
+    </action>
+    <action id="ExtractBooleanRule" class="org.interventure.cleancode.action.ExtractBooleanMethodsAction" text="Extract Boolean Methods Rule"
+      description="Extract Boolean Predicates from If clauses into properly named Methods">
       <add-to-group group-id="CleanCodePlugin.Main" anchor="last"/>
     </action>
   </actions>

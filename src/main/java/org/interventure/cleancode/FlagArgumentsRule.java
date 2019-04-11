@@ -15,7 +15,7 @@ import java.util.Set;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
 
-public class InstanceFieldCountInspection extends AbstractBaseJavaLocalInspectionTool {
+public class FlagArgumentsRule extends AbstractBaseJavaLocalInspectionTool {
 
     public static final int MAX_FIELD_COUNT = 7;
 
@@ -68,7 +68,7 @@ public class InstanceFieldCountInspection extends AbstractBaseJavaLocalInspectio
     @NotNull
     @Override
     public String getDisplayName() {
-        return "SRP Instance Count Rule";
+        return "Flag Arguments Rule";
     }
     
 }
