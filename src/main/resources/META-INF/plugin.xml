@@ -1,24 +1,30 @@
 <idea-plugin>
-    <id>org.interventure.cleancode</id>
-    <name>Java Clean Code Plugin</name>
-    <vendor email="avramovic.slavisa81@gmail.com" url="http://www.inteventure.info">InterVenture</vendor>
+  <id>org.interventure.cleancode</id>
+  <name>Java Clean Code</name>
+  <vendor email="avramovic.slavisa81@gmail.com" url="http://www.inteventure.info">InterVenture
+  </vendor>
 
-    <description><![CDATA[
-    Enter short description for your plugin here.<br>
-    <em>most HTML tags may be used</em>
-    ]]></description>
+  <description>Clean Code plugin finds suspicous code based on clean code rules</description>
 
-    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
-         on how to target different products -->
-    <!-- uncomment to enable plugin in all products
-    <depends>com.intellij.modules.lang</depends>
-    -->
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <depends>com.intellij.modules.lang</depends>
 
-    <extensions defaultExtensionNs="com.intellij">
-        <!-- Add your extensions here -->
-    </extensions>
+  <extensions defaultExtensionNs="com.intellij">
+    <localInspection implementationClass="org.interventure.cleancode.ReferenceDeclarationDistanceInspection"/>
+    <localInspection implementationClass="org.interventure.cleancode.InstanceFieldCountInspection"/>
+<!--
+    <localInspection implementationClass="org.interventure.cleancode.LongMethodRuleInspection"/>
+-->
+  </extensions>
 
-    <actions>
-        <!-- Add your actions here -->
-    </actions>
+  <actions>
+    <group id="CleanCodePlugin.Main" text="Clean Code" description="clean code menu">
+      <add-to-group group-id="MainMenu" anchor="last"/>
+    </group>
+    <action id="StepDownRule" class="org.interventure.cleancode.action.RearrangeMethodsAction" text="Step Down Rule"
+      description="Rearrange Methods according to Stepdown Rule">
+      <add-to-group group-id="CleanCodePlugin.Main" anchor="last"/>
+    </action>
+  </actions>
 </idea-plugin>
